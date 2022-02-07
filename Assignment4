@@ -1,1 +1,75 @@
+df <- data.frame(Freq= c(0.6, 0.3, 0.4, 0.4, 0.2, 0.6, 0.3, 0.4, 0.9, 0.2),
+                 bloodp= c(103, 87, 32, 42, 59, 109, 78, 205, 135, 176),
+                 first= c(1, 1, 1, 1, 0, 0, 0, 0, NA, 1),
+                 second= c(0, 0, 1, 1, 0, 0, 1, 1, 1, 1),
+                 finaldecision= c(0, 1, 0, 1, 0, 1, 0, 1 , 1, 1))
+na.omit(df)
+
+boxplot(df$bloodp~df$first, 
+        main= "Blood Pressure by General Doctor",
+        xlab="General Doctor",
+        ylab="Blood Pressure",
+        na.omit(),
+        names = c("Bad","Good"),
+        col= (c("yellow","pink")))
+
+boxplot(df$bloodp~df$second, 
+        main= "Blood Pressure by External Doctor",
+        xlab="External Doctor",
+        ylab="Blood Pressure",
+        names = c("Low","High"),
+        col= (c("green","purple")))
+
+
+boxplot(df$bloodp~df$finaldecision, 
+        main= "Emergency Unit Decision",
+        xlab="Emergency Unit",
+        ylab="Blood Pressure",
+        names = c("Low","High"),
+        col= (c("Red","Blue")))
+
+
+hist(df$Freq,
+     main= "Frequency", 
+     xlab= "Frequency of Visits Last 12 Months",
+     ylab= "Number of Patients",
+     col= c("pink"),
+     breaks = seq(0, 1, .1),
+     limits = c(0, 1),
+)
+
+
+
+
+hist(df$first,
+     main="General Doctor",
+     xlab= "Assessment",
+)
+hist(df$second,
+     main="External Doctor",
+     xlab= "Assessment",
+     col= ("green")
+)
+hist(df$finaldecision,
+     main="Emergency Unit",
+     xlab= "Assessment",
+     col = ("blue")
+)
+
+par(mfrow=c(3,2))
+hist(df$first,
+     main="General Doctor",
+     xlab= "Assessment",
+     col= ("pink")
+)
+hist(df$second,
+     main="External Doctor",
+     xlab= "Assessment",
+     col= ("green")
+)
+hist(df$finaldecision,
+     main="Emergency Unit",
+     xlab= "Assessment",
+     col = ("blue")
+)
 
