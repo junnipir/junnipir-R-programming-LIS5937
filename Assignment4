@@ -9,7 +9,6 @@ boxplot(df$bloodp~df$first,
         main= "Blood Pressure by General Doctor",
         xlab="General Doctor",
         ylab="Blood Pressure",
-        na.omit(),
         names = c("Bad","Good"),
         col= (c("yellow","pink")))
 
