@@ -17,12 +17,3 @@ typeof(`satgpa.(1)`)
 
 plot(`satgpa.(1)`)
 summary(`satgpa.(1)`)
-
-
-install.packages("plyr")
-library(plyr)
-frequency(`satgpa.(1)`)
-
-
-
-
