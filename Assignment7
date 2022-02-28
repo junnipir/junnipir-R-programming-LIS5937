@@ -1,1 +1,28 @@
+'satgpa.(1)' <- read.csv("~/Desktop/satgpa (1).csv")
+View(`satgpa.(1)`)
+install.packages("pryr")
+library(pryr)
+install.packages("lpyr")
+
+
+#determining OO type and base type
+otype("~/Desktop/satgpa (1).csv")
+otype(`satgpa.(1)`)
+is.object(`satgpa.(1)`)
+isS4(`satgpa.(1)`)
+typeof(`satgpa.(1)`)
+
+##OO type is S3 and base type is list
+
+
+plot(`satgpa.(1)`)
+summary(`satgpa.(1)`)
+
+
+install.packages("plyr")
+library(plyr)
+frequency(`satgpa.(1)`)
+
+
+
 
