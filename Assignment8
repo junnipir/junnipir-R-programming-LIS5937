@@ -1,1 +1,25 @@
+#install packages
+install.packages("plyr")
+library("plyr")
+install.packages("data.table")
+library("data.table")
+install.packages("dplyr")
+
+#import dataset
+data <- read.table(file.choose(), header = TRUE, sep = ",")
+data
+
+#ran ddply function to segment data by gender and then calculate the mean grade by gender
+gender_by_sex = ddply(data,"Sex",transform,Grade.Average=mean(Grade))
+sex = data$Sex
+gender_by_sex
+
+#filtered data set to only show students with "i" in their name
+write.table(gender_by_sex, "gender_by_sex")
+i_data <- subset(data,grepl("i",data$Name,ignore.case=T))
+i_data
+
+#wrote the data to a CSV file
+write.table(i_data,"DataSubset_i_Students", sep=",")
+
 
