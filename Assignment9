@@ -1,1 +1,62 @@
+#installed a plethora of packages to try to get the visualizations I wanted 
+install.packages("lattice")
+install.packages("ggplot2")
+install.packages("aes")
+install.packages("graphics")
+install.packages("dplyr")
+install.packages("textplot")
+install.packages("tidyverse")
+install.packages("plyr")
+
+#loading in the libraries
+library(ggraph)
+library(ggplot2)
+library(textplot)
+library(plyr)
+
+
+
+#import dataset
+ButterfliesBc <- read.table(file.choose(), header = TRUE, sep = ",")
+ButterfliesBc
+
+#I tried to recode the one text variable into a number so I could plot it
+ButterfliesBc$Sex.dummy<- 0
+ButterfliesBc$Sex.dummy<- ifelse(ButterfliesBc$Sex=="Male",1,0)
+ButterfliesBc$Sex.dummy
+
+#concatenate vectors 
+##with these, I was trying to figure out how I wanted to set up my data comparisons
+butterfliesall <- c(ButterfliesBc$Sex.dummy, ButterfliesBc$Temp, ButterfliesBc$Wing)
+butterfliesSxT <- c(ButterfliesBc$Sex.dummy, ButterfliesBc$Temp)
+butterfliesSxW <- c(ButterfliesBc$Sex.dummy, ButterfliesBc$Wing)
+butterfliesTxW <- c(ButterfliesBc$Temp, ButterfliesBc$Wing)
+butterfliesWxS <- c(ButterfliesBc$Wing, ButterfliesBc$Sex.dummy)
+bsex<- c(ButterfliesBc$Sex.dummy)
+bwing<- c(ButterfliesBc$Wing)
+btemp<- c(ButterfliesBc$Temp)
+
+#This is my attempt to create a pie chart with a recoded variable
+pie(ButterfliesBc$Sex.dummy)
+pie(btemp)
+
+#this was my achilles heel in this assignment. I tried to create a work around to create a pie chart with a text variable
+table(ButterfliesBc$Sex.dummy)/length(ButterfliesBc$Wing)
+pie(table(ButterfliesBc$Sex.dummy))
+count(ButterfliesBc,"Sex")
+
+
+#line graph
+plot(x= bwing, y=btemp)+
+  plot(bwing, type="o", col="light pink", axes=FALSE, ann=FALSE, ylim=c(15,20))
+box()
+title(xlab="Temperature")
+title(ylab="Wingspan")
+title(main="Wingspan by Temperature", col.main="light blue")    
+
+#scatterplot
+plot(x=btemp,y=bwing)
+
+#simple histograpm showing wingspan
+hist(bwing, col="lightblue")
 
