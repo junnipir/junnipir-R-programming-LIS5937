@@ -1,1 +1,39 @@
+Name <- c("Jeb", “Donald”, "Ted”, “Marco” “Carly”, “Hillary”, “Berine”)
+Name <- c("Jeb", "Donald", "Ted", "Marco", "Carly", "Hillary", "Berine")
+ABC <- c(4, 62, 51, 21, 2, 14, 15)
+CBS <- c(12, 75, 43, 19, 1, 21, 19)
+Name <- cbind(Name, ABC, CBS)
+Name <- c("Jeb", “Donald”, "Ted”, “Marco” “Carly”, “Hillary”, “Berine”)ABC <- c(4, 62, 51, 21, 2, 14, 15)
+CBS <- c(12, 75, 43, 19, 1, 21, 19)
+Name <- c("Jeb", “Donald”, "Ted”, “Marco” “Carly”, “Hillary”, “Berine”)
+Name <- c("Jeb", "Donald", "Ted”, “Marco” “Carly”, “Hillary”, “Berine”)
+Name <- c("Jeb", "Donald", "Ted", "Marco", "Carly", "Hillary", "Berine")
+ABC <- c(4, 62, 51, 21, 2, 14, 15)
+CBS <- c(12, 75, 43, 19, 1, 21, 19)
+Candidates <-cbind(Name, ABC, CBS)
+Candidates
+candidates.df <- data.frame(Name, ABC, CBS)
+candidates.df
+means(candidates.df)
+mean(candidates.df)
+mean(candidates.df[,3])
+mean(candidates.df[,2:3])
+mean(candidates.df[,2:3])
+mean(candidates.df[,2])
+mean(cadidates.df[,2,3])
+mean(candidates.df[2,3])
+mean(candidates.df[,2:3])
+colMeans(candidates.df[2:3])
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
 

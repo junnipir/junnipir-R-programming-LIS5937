@@ -1,0 +1,60 @@
+A <- matrix(1:100, nrow=10)
+B <- matrix(1:1000, nrow=10)
+A
+B
+
+###Transposed A and B###
+t(A)
+t(B)
+
+###Ran simple math on Matrix A###
+mean(A)
+median(A)
+range(A)
+
+###Tried to find the index of each matrix and their determinants###
+det(A)
+sove(A)
+
+det(B)
+solve(B)
+
+###Created vectors for each Matrix###
+
+VA <- c(1:100)
+VA
+VB <- c(1:1000)
+VB
+
+VAT<- c(100:1)
+VAT
+VBT<- c(1000:1)
+VBT
+
+###tried multiplying the matrix by the vector###
+
+A*VA
+B*VB
+
+A*VAT
+B*VBT
+
+###Transposed Matrix by Vector##
+t(A)*VA
+t(B)*VB
+
+#Reassigning Rows to Vectors#
+VAT1<- matrix(VAT, nrow=10)
+VAT1
+VBT1<- matrix(VBT, nrow=10)
+VBT1
+
+## %*%
+
+A*VAT1
+B*VBT1
+
+#checking determinants
+det(VAT1)
+det(VBT1)
+det(VBT)
